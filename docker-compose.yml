@@ -27,6 +27,9 @@ services:
       - PGPASSWORD=postgres_password
       - PGPORT=5432
   worker:
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
     build:
       dockerfile: Dockerfile.dev
       context: ./worker
