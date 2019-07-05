@@ -43,7 +43,9 @@ class Fib extends Component {
 
   renderValues() {
     const entries = [];
-
+    if(typeof this.state.values === 'string') {
+      this.state.values = {};
+    }
     for (let key in this.state.values) {
       entries.push(
         <div key={key}>
